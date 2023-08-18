@@ -770,7 +770,7 @@ header {
     color: black;
   }
   .cart-bottom {
-    min-height: 15vh;
+    bottom: 50px;
     max-width: 100%;
     padding: 10px;
   }
