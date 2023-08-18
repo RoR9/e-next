@@ -727,11 +727,14 @@ header {
     width: 100%;
     max-width: 100%;
     padding: 4px;
+    display: flex;
+    flex-direction: column;
   }
   .cart-heading {
     margin-top: 35px;
   }
   .product-container {
+    flex-grow: 1;
     margin-top: 10px;
   }
   .product {
@@ -771,6 +774,7 @@ header {
     color: black;
   }
   .cart-bottom {
+    position: static;
     bottom: 12px;
     max-width: 100%;
     padding: 10px;
