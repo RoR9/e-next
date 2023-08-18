@@ -577,7 +577,6 @@ header {
 }
 
 .cart-bottom {
-  height: fit-content;
   position: absolute;
   bottom: 12px;
   width: 550px;
@@ -771,6 +770,7 @@ header {
     color: black;
   }
   .cart-bottom {
+    min-height: 15vh;
     max-width: 100%;
     padding: 10px;
   }
