@@ -106,7 +106,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+  gap: 25px;
   margin-top: 20px;
   width: 100%;
 }
@@ -355,10 +355,10 @@ header {
 .product-detail-container {
   flex-wrap: wrap;
 }
-.product-detail-container .product-detail-image {
-  width: 350px;
-  height: 350px;
+.product-detail-container .image-container {
+  max-width: 400px;
 }
+
 .product-detail-image {
   border-radius: 15px;
   background-color: #ebebeb;
@@ -412,7 +412,7 @@ header {
   overflow-x: hidden;
   user-select: none;
   gap: var(--gap);
-  height: 350px;
+  height: 400px;
 }
 
 @keyframes scroll {
@@ -471,7 +471,7 @@ header {
 }
 .cart-heading {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .cart-close {
@@ -577,6 +577,7 @@ header {
 }
 
 .cart-bottom {
+  height: fit-content;
   position: absolute;
   bottom: 12px;
   width: 550px;
@@ -621,6 +622,10 @@ header {
 .success .icon {
   color: green;
   font-size: 40px;
+}
+.fail-icon {
+  color: red;
+  font-size: 60px;
 }
 .success h2 {
   text-transform: capitalize;

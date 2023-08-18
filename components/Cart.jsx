@@ -1,5 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
-import { React, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useStateContext } from "context";
 import {
   AiOutlineLeft,
@@ -14,6 +13,8 @@ import getStripe from "lib/getStripe";
 import { toast } from "react-hot-toast";
 
 const Cart = () => {
+  const cartElement = useRef(null);
+
   const {
     totalQty,
     productsCart,
@@ -22,6 +23,13 @@ const Cart = () => {
     toggleCartQty,
     handleRemove,
   } = useStateContext();
+
+  const handleHideCart = (e) => {
+    if (e.target.className == "cart-wrapper") {
+      e.stopPropagation();
+      setShowCart(false);
+    }
+  };
 
   const handleCheckout = async () => {
     const stripe = await getStripe();
@@ -45,7 +53,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="cart-wrapper">
+    <div className="cart-wrapper" onClick={handleHideCart}>
       <div className="cart-container">
         <div className="cart-heading">
           <button className="cart-close" onClick={() => setShowCart(false)}>

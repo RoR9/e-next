@@ -11,6 +11,8 @@ import {
 } from "react-icons/ai";
 import { useStateContext } from "context";
 
+import { ImageComponent } from "@components/ImageComponent";
+
 const ProductDetail = ({ product, productList }) => {
   const [index, setIndex] = useState(0);
   const { img, name, price, description, _id } = product;
@@ -33,22 +35,25 @@ const ProductDetail = ({ product, productList }) => {
       <div className="product-detail-container">
         <div>
           <div className="image-container">
-            <img
-              className="product-detail-image"
-              src={urlFor(img && img[index])}
-              alt=""
+            <ImageComponent
+              image={img[index]}
+              className={"product-detail-image"}
+              width={400}
+              height={400}
+              priority
             />
           </div>
           <div className="small-images-container">
             {img?.map((item, i) => (
-              <img
+              <ImageComponent
+                key={i}
                 className={
                   i === index ? "small-image selected-image" : "small-image"
                 }
+                image={item}
                 onMouseEnter={() => setIndex(i)}
-                key={i}
-                src={urlFor(item)}
-                alt=""
+                width={50}
+                height={50}
               />
             ))}
           </div>

@@ -5,15 +5,13 @@ import { useStateContext } from "context";
 import starsShoot from "lib/utils";
 
 const Success = () => {
-  const { setProductsCart, setTotalPrice, setTotalQty } = useStateContext();
+  const { setProductsCart } = useStateContext();
 
   useEffect(() => {
     localStorage.clear();
     setProductsCart([]);
-    setTotalPrice(0);
-    setTotalQty(0);
     starsShoot();
-  }, []);
+  }, [setProductsCart]);
 
   return (
     <div className="success-wrapper">
