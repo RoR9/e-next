@@ -37,9 +37,11 @@ export default function StateContext({ children }) {
     if (showCart) {
       document.body.style.overflow = "hidden";
       document.body.style.touchAction = "none";
+      document.body.style.position = "fixed";
     } else {
       document.body.style.overflow = "visible";
       document.body.style.touchAction = "auto";
+      document.body.style.position = "static";
     }
   }, [showCart]);
 
