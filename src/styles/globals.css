@@ -463,6 +463,7 @@ header {
   /* will-change: transform; */
   transition: all 1s ease-in-out;
 }
+
 .cart-container {
   height: 100%;
   background-color: white;
@@ -722,6 +723,9 @@ header {
   .product-detail-container .product-detail-image {
     width: 350px;
     height: 350px;
+  }
+  .cart-wrapper {
+    background-color: white;
   }
   .cart-container {
     width: 100%;
