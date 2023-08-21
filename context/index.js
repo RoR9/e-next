@@ -36,8 +36,10 @@ export default function StateContext({ children }) {
   useEffect(() => {
     if (showCart) {
       document.body.style.overflow = "hidden";
+      document.body.style.touchAction = "none";
     } else {
       document.body.style.overflow = "visible";
+      document.body.style.touchAction = "auto";
     }
   }, [showCart]);
 
